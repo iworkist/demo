@@ -67,8 +67,9 @@ print(f"nbatches={nbatches}")
 
 # 6) TensorBoard SummaryWriter (rank==0만 생성)
 # runs/날짜-시간 폴더에 저장
-log_dir = os.path.join("runs", datetime.datetime.now().strftime("%Y%m%d-%H%M%S"))
-writer = SummaryWriter(log_dir=log_dir)
+if optimus_p.is_last_stage():
+    log_dir = os.path.join("runs", datetime.datetime.now().strftime("%Y%m%d-%H%M%S"))
+    writer = SummaryWriter(log_dir=log_dir)
 
 # 7) 학습 함수 (epoch 인자로 받기)
 epochs = 1
