@@ -118,7 +118,7 @@ def train_one_epoch(epoch):
             loss_value = sum(loss) / optimus_p.mbsize
             total_loss += loss_value
 
-            log_interval = 10
+            log_interval = 1
             if i % log_interval == 0 and i > 0:
                 cur_loss = total_loss / log_interval
                 elapsed = time.time() - start_time
