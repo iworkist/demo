@@ -83,7 +83,8 @@ if int(os.environ["RANK"]) == 0:
 
 
 #batch_size = 32
-batch_size = 416
+#batch_size = 416
+batch_size = 320
 #micro_batch_size = int(os.environ["WORLD_SIZE"]) // 2 # TODO
 #micro_batch_size = 24
 micro_batch_size = 32
